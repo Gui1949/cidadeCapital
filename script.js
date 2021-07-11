@@ -79,7 +79,7 @@ setInterval(() => {
   chamada("src/cidade.ogg");
   gera_tempo()
   console.log(gera_tempo())
-}, 3000);
+}, gera_tempo());
 
 //Ao iniciar
 
