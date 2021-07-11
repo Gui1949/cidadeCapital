@@ -7,6 +7,7 @@ let musicas = [
   "Rx8R693uZn8",
   "k7IQsTGpCeo",
   "bOqxDs2SZ4U",
+  "qBCTQvppgKA",
   "CKTkigVUNBc",
   "syqJAgTQdlU",
   "vras6sDSvOY",
@@ -71,13 +72,14 @@ chamada = (param) => {
 
 // Chamar chamada
 gera_tempo = () => {
-    let tempo = Math.floor(Math.random() * 600000) + 180000;
+    let tempo = Math.floor(Math.random() * 400000) + 180000;
     return tempo
 }
-console.log(gera_tempo())
 setInterval(() => {
   chamada("src/cidade.ogg");
-}, gera_tempo());
+  gera_tempo()
+  console.log(gera_tempo())
+}, 3000);
 
 //Ao iniciar
 
@@ -89,6 +91,7 @@ window.addEventListener("DOMContentLoaded", () => {
     player = new YT.Player("player", {
       width: "640",
       height: "390",
+      playsinline: 1,
       videoId: musica_aleatoria(),
       events: {
         onReady: onPlayerReady,
