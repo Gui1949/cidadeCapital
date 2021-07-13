@@ -44,6 +44,21 @@ let musicas = [
   "_yhXdRIq-N0",
   "w_e5eKKX4qQ",
   "Uq8JErecZFQ",
+  "Qum7tgkvFV4",
+  "kI3Y4TiD0oM",
+  "GSY9OWNo3WU",
+  "_vML7_eUkZw",
+  "4XKGfziuw5c",
+  "aKdcUM2M5z4",
+  "B3gAZvncfa0",
+  "meUBH1viVrA",
+  "X1p4TerTwok",
+  "fUjOfsoBhMY",
+  "MuQPWd1ybH4",
+  "4waQ7092O5c",
+  "6SCv3DHUSXA",
+  "4vQnz2wEgXY",
+  "AjSSh9bQnU8",
 ];
 
 let data = new Date();
@@ -72,13 +87,13 @@ chamada = (param) => {
 
 // Chamar chamada
 gera_tempo = () => {
-    let tempo = Math.floor(Math.random() * 400000) + 180000;
-    return tempo
-}
+  let tempo = Math.floor(Math.random() * 400000) + 180000;
+  return tempo;
+};
 setInterval(() => {
   chamada("src/cidade.ogg");
-  gera_tempo()
-  console.log(gera_tempo())
+  gera_tempo();
+  console.log(gera_tempo());
 }, gera_tempo());
 
 //Ao iniciar
