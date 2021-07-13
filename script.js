@@ -59,6 +59,9 @@ let musicas = [
   "6SCv3DHUSXA",
   "4vQnz2wEgXY",
   "AjSSh9bQnU8",
+  "Nzye4n8xDtw",
+  "_HJ9LdmppYU",
+  "aQkPcPqTq4M",
 ];
 
 let data = new Date();
