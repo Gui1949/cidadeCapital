@@ -117,7 +117,7 @@ carregarXML = () => {
 
 //Noticia
 lerNoticia = () => {
-  chamada('src/noticias.ogg')
+  chamada('src/noticias1.ogg')
   setTimeout(() => {
     tts(noticias[Math.floor(Math.random() * noticias.length) + 1]);
   },1000)
