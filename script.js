@@ -117,7 +117,10 @@ carregarXML = () => {
 
 //Noticia
 lerNoticia = () => {
-  tts(noticias[Math.floor(Math.random() * noticias.length) + 1]);
+  chamada('src/noticias.ogg')
+  setTimeout(() => {
+    tts(noticias[Math.floor(Math.random() * noticias.length) + 1]);
+  },1000)
 };
 
 //Ao iniciar
@@ -155,7 +158,7 @@ window.addEventListener("DOMContentLoaded", () => {
           setTimeout(() => {
             player.setVolume(100);
           },30000);
-        }, 3000);
+        }, 10000);
         contador_musicas = 0;
       }
     }
