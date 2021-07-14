@@ -64,6 +64,9 @@ let musicas = [
   "aQkPcPqTq4M",
 ];
 
+let noticias = [];
+let contador_musicas = 0;
+
 let data = new Date();
 let hora = data.getHours();
 
@@ -93,22 +96,39 @@ gera_tempo = () => {
   let tempo = Math.floor(Math.random() * 400000) + 180000;
   return tempo;
 };
+
 setInterval(() => {
   chamada("src/cidade.ogg");
   gera_tempo();
   console.log(gera_tempo());
 }, gera_tempo());
 
+//XML
+carregarXML = () => {
+  let url = "https://www.bbc.co.uk/portuguese/index.xml";
+  let i = 0;
+  feednami.load(url).then((feed) => {
+    for (let entrada of feed.entries) {
+      noticias.push(`De BBC: ${entrada.title}, ${entrada.description}`);
+    }
+  });
+  console.log(noticias);
+};
+
+//Noticia
+lerNoticia = () => {
+  tts(noticias[Math.floor(Math.random() * noticias.length) + 1]);
+};
+
 //Ao iniciar
 
 window.addEventListener("DOMContentLoaded", () => {
+  carregarXML();
   chamada("src/cidade.ogg");
   //   tts("Radio Cidade Capital, agora são" + hora + "horas");
   let player;
   onYouTubePlayerAPIReady = () => {
     player = new YT.Player("player", {
-      width: "640",
-      height: "390",
       playsinline: 1,
       videoId: musica_aleatoria(),
       events: {
@@ -127,6 +147,17 @@ window.addEventListener("DOMContentLoaded", () => {
       player.loadVideoById(musica_aleatoria());
       //   tts("Cidade");
       chamada("src/cidade1.ogg");
+      contador_musicas++;
+      if (contador_musicas == 5) {
+        setTimeout(() => {
+          player.setVolume(20);
+          lerNoticia();
+          setTimeout(() => {
+            player.setVolume(100);
+          },30000);
+        }, 3000);
+        contador_musicas = 0;
+      }
     }
   };
 });
