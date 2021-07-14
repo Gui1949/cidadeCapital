@@ -120,7 +120,7 @@ lerNoticia = () => {
   chamada('src/noticias1.ogg')
   setTimeout(() => {
     tts(noticias[Math.floor(Math.random() * noticias.length) + 1]);
-  },1000)
+  },2000)
 };
 
 //Ao iniciar
