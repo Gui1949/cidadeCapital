@@ -62,6 +62,33 @@ let musicas = [
   "Nzye4n8xDtw",
   "_HJ9LdmppYU",
   "aQkPcPqTq4M",
+  "pvG9VvsNgCk",
+  "5f6_JkX-_Iw",
+  "M1n0s60dL44",
+  "_kD37ytFU10",
+  "f4H9-Gq9i2Y",
+  "jLBmNU3Ly6c",
+  "am0y9DKLs8A",
+  "sEsGEfKPYME",
+  "H0BF9sueJ1Q",
+  "r0-CC7z89qI",
+  "0FUSKO_6NFA",
+  "tNTHwVhL8Mo",
+  "cb7lRInEa6c",
+  "fwCWg-L_TNE",
+  "El9vS2Aj6o0",
+  "RIBkK5X_3mo",
+  "O2IP1zRJe50",
+  "1NyGDqJj0EU",
+  "NvS351QKFV4",
+  "fjB4tOvPpKw",
+  "ll0sSBzL2cs",
+  "8BZU1vNLXX0",
+  "dEh3dJORNU4",
+  "BtKg458XAHk",
+  "kVGIIvnG1_E",
+  "P4TAy1NiOho",
+  "LcJIy3KO7Uw",
 ];
 
 let noticias = [];
@@ -117,10 +144,10 @@ carregarXML = () => {
 
 //Noticia
 lerNoticia = () => {
-  chamada('src/noticias1.ogg')
+  chamada("src/noticias1.ogg");
   setTimeout(() => {
     tts(noticias[Math.floor(Math.random() * noticias.length) + 1]);
-  },2000)
+  }, 2000);
 };
 
 //Ao iniciar
@@ -157,7 +184,7 @@ window.addEventListener("DOMContentLoaded", () => {
           lerNoticia();
           setTimeout(() => {
             player.setVolume(100);
-          },30000);
+          }, 30000);
         }, 10000);
         contador_musicas = 0;
       }
